@@ -1,15 +1,18 @@
 package com.henry.foursquare.features.home;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 
 import com.henry.foursquare.R;
 import com.henry.foursquare.common.bases.BaseActivity;
 
+import androidx.recyclerview.widget.RecyclerView;
+import butterknife.BindView;
+
 public class MainActivity extends BaseActivity {
+
+    @BindView(R.id.recyclerView)
+    RecyclerView recyclerView;
 
     @Override
     protected int getLayoutId() {
