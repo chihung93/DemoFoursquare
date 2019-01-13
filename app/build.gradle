@@ -1,0 +1,58 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.henry.foursquare"
+        minSdkVersion 19
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+    
+    /*Google Support*/
+    implementation "androidx.appcompat:appcompat:$rootProject.appcompat"
+    implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraint"
+    implementation "com.google.code.gson:gson:$rootProject.gson"
+    implementation "androidx.cardview:cardview:$rootProject.supportLibraryVersion"
+    implementation "androidx.recyclerview:recyclerview:$rootProject.supportLibraryVersion"
+    implementation "androidx.multidex:multidex:$rootProject.multidex"
+
+    /*Retrofit*/
+
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$rootProject.adapterRxjava2"
+
+    implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.interceptorVersion"
+
+    // Di
+    implementation "com.google.dagger:dagger:$rootProject.daggerVersion"
+
+    annotationProcessor "com.google.dagger:dagger-compiler:$rootProject.daggerVersion"
+
+    implementation "com.google.dagger:dagger-android:$rootProject.daggerVersion"
+
+    implementation "com.google.dagger:dagger-android-support:$rootProject.daggerVersion"
+
+    annotationProcessor "com.google.dagger:dagger-android-processor:$rootProject.daggerVersion"
+
+    //Lint
+    implementation 'nl.littlerobots.rxlint:rxlint:1.7.2'
+
+    /*Logger*/
+    implementation "com.jakewharton.timber:timber:$rootProject.timber"
+
+}
