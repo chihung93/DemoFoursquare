@@ -7,5 +7,5 @@ import java.util.List;
 import io.reactivex.Flowable;
 
 public interface SearchContract {
-    Flowable<List<Venue>> search(String query, long longitude, long latitude);
+    Flowable<List<Venue>> search(String query, double longitude, double latitude);
 }

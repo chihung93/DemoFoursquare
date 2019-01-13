@@ -15,7 +15,7 @@ public class SearchRepository implements SearchContract {
     }
 
     @Override
-    public Flowable<List<Venue>> search(String query, long longitude, long latitude) {
+    public Flowable<List<Venue>> search(String query, double longitude, double latitude) {
         return remote.search(query,longitude,latitude);
     }
 }

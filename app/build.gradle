@@ -25,7 +25,6 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'androidx.appcompat:appcompat:1.0.0-alpha1'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.2'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
@@ -39,10 +38,9 @@ dependencies {
     implementation "androidx.multidex:multidex:$rootProject.multidex"
 
     /*Retrofit*/
-
     implementation "com.squareup.retrofit2:adapter-rxjava2:$rootProject.adapterRxjava2"
-
     implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.interceptorVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$rootProject.converterGson"
 
     // Di
     implementation "com.google.dagger:dagger:$rootProject.daggerVersion"
@@ -65,4 +63,7 @@ dependencies {
     implementation 'com.jakewharton:butterknife:10.0.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.0.0'
 
+    /*Rxjava*/
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.3'
 }

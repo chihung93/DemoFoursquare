@@ -2,21 +2,23 @@ package com.henry.foursquare.features.launch;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
+import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.TextView;
 
 import com.henry.foursquare.R;
-import com.henry.foursquare.common.bases.BaseActivity;
 import com.henry.foursquare.features.home.MainActivity;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class LaunchActivity extends BaseActivity {
+public class LaunchActivity extends AppCompatActivity {
 
     private static final int MY_PERMISSIONS_REQUESTS = 123;
 
@@ -24,11 +26,17 @@ public class LaunchActivity extends BaseActivity {
     TextView btnEnableLocation;
 
     @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(getLayoutId());
+        ButterKnife.bind(this);
+        init();
+    }
+
     protected int getLayoutId() {
         return R.layout.activity_launch;
     }
 
-    @Override
     protected void init() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED &&
