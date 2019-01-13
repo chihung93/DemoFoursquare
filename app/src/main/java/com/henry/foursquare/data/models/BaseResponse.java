@@ -5,7 +5,7 @@ import java.util.*;
 import com.google.gson.annotations.SerializedName;
 
 
-public class BaseReponse{
+public class BaseResponse {
 
 	@SerializedName("meta")
 	private Meta meta;
