@@ -50,14 +50,8 @@ ext {
     rxAndroid = '2.1.0'
     eventbus = '3.1.1'
     interceptorVersion = "3.11.0"
-    firebase = "16.0.1"
-    firebaseMessage = "17.1.0"
-    firebaseAuth = "16.0.2"
-    twitter = "3.3.0"
-    bigImageViewer = "1.4.6"
     gson = "2.8.5"
     adapterRxjava2 = "2.4.0"
     converterGson = "2.3.0"
-    giraffeplayer2 = "0.1.19-lazyLoad"
     timber = "4.7.1"
 }

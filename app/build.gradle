@@ -16,14 +16,20 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.appcompat:appcompat:1.0.0-alpha1'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.2'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
-    
+
     /*Google Support*/
     implementation "androidx.appcompat:appcompat:$rootProject.appcompat"
     implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraint"
@@ -54,5 +60,9 @@ dependencies {
 
     /*Logger*/
     implementation "com.jakewharton.timber:timber:$rootProject.timber"
+
+    /*Butterknife*/
+    implementation 'com.jakewharton:butterknife:10.0.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.0.0'
 
 }
