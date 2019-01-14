@@ -1,7 +1,8 @@
 # DemoFoursquare
 The application has to use Foursquare Search API (https://developer.foursquare.com/start/search) via REST
 
-#Scenario
+# Scenario
+
 Step 1: Enable Your Location
 
 Step 2: Input your keywords (ex: subway)
