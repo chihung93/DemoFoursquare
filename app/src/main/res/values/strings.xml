@@ -3,4 +3,5 @@
     <string name="access_your_location">ACCESS YOUR\nLOCATION</string>
     <string name="title_bottom">The golden rule of real estate is\nlocation. Please enable location\nservices</string>
     <string name="enable_location_service">Enable Location Service</string>
+    <string name="search">Search</string>
 </resources>
