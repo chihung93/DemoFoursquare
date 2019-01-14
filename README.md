@@ -14,8 +14,8 @@ Tested on enviroments:
 2. Location: Latitude	38.575764, Longitude	-121.478851
 3. Demo screen:
 
-3.1. ![Launch Screen](https://i.imgur.com/ijnnSYl.png)
-3.1. ![Search Screen](https://i.imgur.com/dDow3SL.png)
+![Launch Screen](https://i.imgur.com/dDow3SL.png)
+![Search Screen](https://i.imgur.com/ijnnSYl.png)
 
 
 
