@@ -2,11 +2,14 @@ package com.henry.foursquare.features.home;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.location.Location;
+import android.location.LocationManager;
 import android.view.View;
 import android.widget.ProgressBar;
 
 import com.henry.foursquare.R;
 import com.henry.foursquare.common.bases.BaseActivity;
+import com.henry.foursquare.common.utils.LocationUtils;
 import com.henry.foursquare.data.models.Venue;
 import com.henry.foursquare.features.home.domain.adapters.VenuesAdapter;
 
@@ -23,11 +26,12 @@ public class MainActivity extends BaseActivity implements MainContract.View {
     RecyclerView recyclerView;
     @BindView(R.id.progressBar)
     ProgressBar progressBar;
-
     VenuesAdapter adapter;
 
     @Inject
     MainPresenter presenter;
+
+    double longitude, latitude;
 
     @Override
     protected int getLayoutId() {
@@ -39,7 +43,9 @@ public class MainActivity extends BaseActivity implements MainContract.View {
         presenter.setView(this);
         adapter = new VenuesAdapter();
         recyclerView.setAdapter(adapter);
-        presenter.search("Subway",  -121.478851,38.575764);
+
+        LocationUtils locationUtils = new LocationUtils();
+        locationUtils.getLocation(this, locationResult);
     }
 
     public static void start(Activity context) {
@@ -72,4 +78,16 @@ public class MainActivity extends BaseActivity implements MainContract.View {
         }
         super.onDestroy();
     }
+
+    LocationUtils.LocationResult locationResult = new LocationUtils.LocationResult() {
+        @Override
+        public void gotLocation(Location location) {
+            //Got the location!
+            if (location != null && longitude != location.getLongitude() && latitude != location.getLatitude()) {
+                longitude = location.getLongitude();
+                latitude = location.getLatitude();
+                presenter.search("Subway", longitude, latitude);
+            }
+        }
+    };
 }
