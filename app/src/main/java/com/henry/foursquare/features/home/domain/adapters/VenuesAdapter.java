@@ -14,7 +14,7 @@ public class VenuesAdapter extends BaseRecyclerAdapter<Venue,VenueHolder> {
 
     @Override
     public VenueHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
-        return new VenueHolder(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_venue,viewGroup));
+        return new VenueHolder(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_venue,viewGroup,false));
     }
 
     @Override

@@ -39,7 +39,7 @@ public class MainActivity extends BaseActivity implements MainContract.View {
         presenter.setView(this);
         adapter = new VenuesAdapter();
         recyclerView.setAdapter(adapter);
-        presenter.search("Subway", 40.7484, -73.9857);
+        presenter.search("Subway",  -121.478851,38.575764);
     }
 
     public static void start(Activity context) {
